@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9408a0610c1e54f8d4810ad0ad6e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDetection
-  _targetingRange: 4
+  _targetingRange: 10
   _playerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   _enemyDetection: {fileID: 599564850}
-  _attackRange: 1.5
+  _attackRange: 2
 --- !u!114 &599564852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,8 +313,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackPlayer
   _enemyDetection: {fileID: 599564850}
   _enemyAI: {fileID: 599564851}
-  _dashDistance: 4
-  _dashSpeed: 10
+  _dashDistance: 2
+  _dashSpeed: 15
+  _dashCooldown: 1.5
 --- !u!65 &599564853
 BoxCollider:
   m_ObjectHideFlags: 0
