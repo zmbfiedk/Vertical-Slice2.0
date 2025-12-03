@@ -256,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 351854938}
   - component: {fileID: 351854939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gras1Voor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 16
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f24cccb1539dc784987116ce126c339d, type: 2}
+  - {fileID: 2100000, guid: 9f547adfe9ea98c4b9fc3acb609ec9dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 512793586}
   - component: {fileID: 512793589}
   - component: {fileID: 512793587}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: NoPostCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 192
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -572,7 +572,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.54365206, g: 0, b: 0.8018868, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.2
   m_Range: 3.8
   m_SpotAngle: 25.8
@@ -637,7 +637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 899216829}
   - component: {fileID: 899216830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gras2licht
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,7 +684,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 16
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c3af178ed9b54e147adff908eb3f87d6, type: 2}
+  - {fileID: 2100000, guid: 9f547adfe9ea98c4b9fc3acb609ec9dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -727,7 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 942107905}
   - component: {fileID: 942107906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gras1LichtAchter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -774,7 +774,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 16
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d4a9415426ecf514e8407f62fb3a5408, type: 2}
+  - {fileID: 2100000, guid: 9f547adfe9ea98c4b9fc3acb609ec9dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -920,7 +920,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 63
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1034,7 +1034,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.27
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1103,96 +1103,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 768033056}
   m_LocalEulerAnglesHint: {x: 36.57, y: -0.7, z: 0}
---- !u!1 &988987445
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 988987446}
-  - component: {fileID: 988987447}
-  m_Layer: 0
-  m_Name: Rock3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &988987446
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988987445}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.065552466, y: 0, z: -1.7368788}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2048400465}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &988987447
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988987445}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 48
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 6cc333d70de43e445b2d5a6a191a0dda, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 5fdb6872aea293c478b8a0f15ed300b1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.04, y: 2.01}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1247827173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1247827174}
   - component: {fileID: 1247827175}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gras1Achter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1250,7 +1160,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 16
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dba23d0f082305f4691682131ba1580d, type: 2}
+  - {fileID: 2100000, guid: 9f547adfe9ea98c4b9fc3acb609ec9dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1336,7 +1246,7 @@ MonoBehaviour:
   m_SoftShadowQuality: 0
   m_RenderingLayersMask:
     serializedVersion: 0
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ShadowRenderingLayersMask:
     serializedVersion: 0
     m_Bits: 1
@@ -1394,7 +1304,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingLayerMask: 4294967295
+  m_RenderingLayerMask: 0
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
@@ -1624,7 +1534,7 @@ MonoBehaviour:
   m_SoftShadowQuality: 0
   m_RenderingLayersMask:
     serializedVersion: 0
-    m_Bits: 32
+    m_Bits: 0
   m_ShadowRenderingLayersMask:
     serializedVersion: 0
     m_Bits: 1
@@ -1682,7 +1592,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingLayerMask: 32
+  m_RenderingLayerMask: 0
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
@@ -1708,7 +1618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1707669056}
   - component: {fileID: 1707669057}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gras2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1755,7 +1665,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 16
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8004230ecac53ce409d9b8facad09825, type: 2}
+  - {fileID: 2100000, guid: 9f547adfe9ea98c4b9fc3acb609ec9dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1798,7 +1708,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1889545278}
   - component: {fileID: 1889545279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rock1.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1845,7 +1755,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 48
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6cc333d70de43e445b2d5a6a191a0dda, type: 2}
+  - {fileID: 2100000, guid: 9f547adfe9ea98c4b9fc3acb609ec9dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1913,7 +1823,6 @@ Transform:
   - {fileID: 942107905}
   - {fileID: 1247827174}
   - {fileID: 1889545278}
-  - {fileID: 988987446}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1765318159141634940
@@ -1966,7 +1875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1754219697287679356, guid: 4c93b6fe7ef7bc340b511d8562757e9f, type: 3}
       propertyPath: m_RenderingLayerMask
-      value: 14
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5954265714959882792, guid: 4c93b6fe7ef7bc340b511d8562757e9f, type: 3}
       propertyPath: m_Name
@@ -1974,7 +1883,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5954265714959882792, guid: 4c93b6fe7ef7bc340b511d8562757e9f, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012231478013083492, guid: 4c93b6fe7ef7bc340b511d8562757e9f, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
