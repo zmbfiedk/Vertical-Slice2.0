@@ -12,7 +12,7 @@ public class EnemyHealth : MonoBehaviour
     }
     void Start()
     {
-        State state = State.Alive;
+        //State state = State.Alive;
         Damage.damageDealt += TakeDamage;
     }
 
@@ -22,14 +22,12 @@ public class EnemyHealth : MonoBehaviour
         
     }
 
-
-    
     void TakeDamage(int damage)
     {
         _health -= damage;
         if (_health <= 0)
         {
-            State state = State.Dead;
+            //State state = State.Dead;
             Destroy(gameObject);
         }
     }
