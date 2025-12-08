@@ -13,11 +13,13 @@ public class Dodge : MonoBehaviour
 
     private Collider col;
     private Basemovement move;
+    private Animator anim;
 
     void Start()
     {
         col = GetComponent<Collider>();
-        move = GetComponent<Basemovement>();  
+        move = GetComponent<Basemovement>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -37,12 +39,16 @@ public class Dodge : MonoBehaviour
     {
         isDodging = true;
         cooldownTimer = cooldownTime;
-
         col.enabled = false;
 
         Vector3 dir = move.GetDirectionVector(true);
         Vector3 startPos = transform.position;
         Vector3 endPos = startPos + dir * dodgeDistance;
+
+        // ANIM CORRESPONDS TO DIRECTION
+        if (dir.x > 0) anim.Play("Dash_Forward");
+        else if (dir.x < 0) anim.Play("Dash_Behind");
+        else anim.Play("Dash_sideways");
 
         float t = 0f;
         while (t < dodgeDuration)

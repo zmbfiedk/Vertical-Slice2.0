@@ -23,10 +23,12 @@ public class BaseCombat : MonoBehaviour
 
     private int attackIndex = 0;
     private Basemovement move;
+    private Animator anim;
 
     void Start()
     {
         move = GetComponent<Basemovement>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -49,6 +51,7 @@ public class BaseCombat : MonoBehaviour
         isAttacking = true;
         move.canMove = false;
 
+        anim.Play("Attack_1");
         DoHit();
         yield return new WaitForSeconds(delayBetweenAttacks);
 
@@ -63,7 +66,6 @@ public class BaseCombat : MonoBehaviour
                 StartCoroutine(Attack2());
                 yield break;
             }
-
             yield return null;
         }
 
@@ -72,6 +74,7 @@ public class BaseCombat : MonoBehaviour
 
     private IEnumerator Attack2()
     {
+        anim.Play("Attack_2");
         DoHit();
         yield return new WaitForSeconds(delayBetweenAttacks);
 
@@ -86,7 +89,6 @@ public class BaseCombat : MonoBehaviour
                 StartCoroutine(Attack3());
                 yield break;
             }
-
             yield return null;
         }
 
@@ -95,6 +97,7 @@ public class BaseCombat : MonoBehaviour
 
     private IEnumerator Attack3()
     {
+        anim.Play("Attack_3");
         DoHit();
         yield return new WaitForSeconds(delayBetweenAttacks);
 
@@ -125,16 +128,15 @@ public class BaseCombat : MonoBehaviour
         {
             float step = pushSpeed * Time.deltaTime;
             transform.Translate(dir * step, Space.World);
-
             moved += step;
+
             yield return null;
         }
     }
 
     private void SpawnHurtbox()
     {
-        if (hurtboxPrefab == null)
-            return;
+        if (hurtboxPrefab == null) return;
 
         Vector3 dir = move.GetDirectionVector();
         Vector3 spawnPos = transform.position + dir * attackRange;
