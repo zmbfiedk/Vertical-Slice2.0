@@ -14,15 +14,15 @@ public class BaseCombat : MonoBehaviour
     [SerializeField] private float attackRange = 1f;
 
     [Header("Attack Movement")]
-    [SerializeField] private float forwardPush = 0.5f;   // how far player moves during attack
-    [SerializeField] private float pushSpeed = 10f;       // how fast he moves that 0.5f
+    [SerializeField] private float forwardPush = 0.5f;
+    [SerializeField] private float pushSpeed = 10f;
 
     [Header("Read Only")]
     [SerializeField] private bool isAttacking = false;
     [SerializeField] private float comboResetTimer = 0f;
 
     private int attackIndex = 0;
-    private Basemovement move; 
+    private Basemovement move;
 
     void Start()
     {
@@ -47,7 +47,7 @@ public class BaseCombat : MonoBehaviour
     private IEnumerator Attack1()
     {
         isAttacking = true;
-        move.canMove = false;  // 
+        move.canMove = false;
 
         DoHit();
         yield return new WaitForSeconds(delayBetweenAttacks);
@@ -73,7 +73,6 @@ public class BaseCombat : MonoBehaviour
     private IEnumerator Attack2()
     {
         DoHit();
-
         yield return new WaitForSeconds(delayBetweenAttacks);
 
         float timer = delayBetweenAttacks;
@@ -97,36 +96,35 @@ public class BaseCombat : MonoBehaviour
     private IEnumerator Attack3()
     {
         DoHit();
-
         yield return new WaitForSeconds(delayBetweenAttacks);
-        comboResetTimer = comboCooldown;
 
+        comboResetTimer = comboCooldown;
         EndCombo();
     }
 
     private void EndCombo()
     {
         isAttacking = false;
-        move.canMove = true;   //  Unlock movement again
+        move.canMove = true;
         attackIndex = 0;
     }
 
     private void DoHit()
     {
         SpawnHurtbox();
-        StartCoroutine(PushForward());   //  Add attack movement
+        StartCoroutine(PushForward());
         OnHit?.Invoke();
     }
 
     private IEnumerator PushForward()
     {
+        Vector3 dir = move.GetDirectionVector();
         float moved = 0f;
 
-        // Move the player forward smoothly until it reaches forwardPush distance
         while (moved < forwardPush)
         {
             float step = pushSpeed * Time.deltaTime;
-            transform.Translate(Vector3.forward * step);
+            transform.Translate(dir * step, Space.World);
 
             moved += step;
             yield return null;
@@ -138,9 +136,10 @@ public class BaseCombat : MonoBehaviour
         if (hurtboxPrefab == null)
             return;
 
-        Vector3 spawnPos = transform.position + transform.forward * attackRange;
+        Vector3 dir = move.GetDirectionVector();
+        Vector3 spawnPos = transform.position + dir * attackRange;
 
-        GameObject hb = Instantiate(hurtboxPrefab, spawnPos, transform.rotation, transform);
+        GameObject hb = Instantiate(hurtboxPrefab, spawnPos, Quaternion.identity);
         Destroy(hb, 0.2f);
     }
 }
