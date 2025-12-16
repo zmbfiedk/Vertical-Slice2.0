@@ -3,34 +3,30 @@ using UnityEngine;
 
 public class Basemovement : MonoBehaviour
 {
-    public enum MoveState
-    {
-        Idle, Left, Right, Up, Down,
-        UpLeft, UpRight, DownLeft, DownRight
-    }
-
+    public enum MoveState { Idle, Left, Right, Up, Down, UpLeft, UpRight, DownLeft, DownRight }
     public MoveState currentState { get; private set; }
-    public MoveState lastState { get; private set; }   // << NEW
+    public MoveState lastState { get; private set; }
 
     [SerializeField] private float speed = 5f;
     [HideInInspector] public bool canMove = true;
 
     private SpriteRenderer sr;
+    private Animator anim;
 
-    // idle memory timer
     private float lastMoveTimer = 0f;
-    private float maxRememberTime = 30f; // 30 seconds
+    private float maxRememberTime = 30f;
 
     private void Awake()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
         if (!canMove)
         {
-            SetIdleState();
+            PlayIdleAnim();
             return;
         }
 
@@ -45,21 +41,35 @@ public class Basemovement : MonoBehaviour
             transform.Translate(input * speed * Time.deltaTime, Space.World);
 
             UpdateState(x, y);
-            StoreLastDirection(); // remember direction
             HandleFlipping(x);
+            PlayMovementAnim();
+
+            StoreLastDirection();
         }
-        else
-        {
-            SetIdleState(); // Idle, but direction is remembered
-        }
+        else PlayIdleAnim();
 
         UpdateIdleMemoryTimer();
     }
 
-    // -------------------- NEW FUNCTIONS --------------------
-
-    private void SetIdleState()
+    private void PlayMovementAnim()
     {
+        switch (currentState)
+        {
+            case MoveState.Left: anim.Play("Left_Walk"); break;
+            case MoveState.Right: anim.Play("Right_Walkj"); break;
+            case MoveState.Up: anim.Play("Up_Walk"); break;
+            case MoveState.Down: anim.Play("Walk_Down"); break;
+
+            case MoveState.UpLeft: anim.Play("Up_Walk"); break;
+            case MoveState.UpRight: anim.Play("Up_Walk"); break;
+            case MoveState.DownLeft: anim.Play("Walk_Down"); break;
+            case MoveState.DownRight: anim.Play("Walk_Down"); break;
+        }
+    }
+
+    private void PlayIdleAnim()
+    {
+        anim.Play("Idle");
         currentState = MoveState.Idle;
     }
 
@@ -77,17 +87,14 @@ public class Basemovement : MonoBehaviour
         if (currentState == MoveState.Idle)
         {
             lastMoveTimer += Time.deltaTime;
-            if (lastMoveTimer > maxRememberTime)
-                lastState = MoveState.Idle; // forget direction after 30 sec
+            if (lastMoveTimer > maxRememberTime) lastState = MoveState.Idle;
         }
     }
 
-    // -------------------------------------------------------
-
     private void HandleFlipping(float x)
     {
-        if (x > 0) sr.flipX = true;
-        else if (x < 0) sr.flipX = false;
+        if (x > 0) sr.flipX = false;
+        else if (x < 0) sr.flipX = true;
     }
 
     private void UpdateState(float x, float y)
