@@ -6,7 +6,15 @@ public class SpawnChest : MonoBehaviour
 
     void Start()
     {
+        if (ChestPrefab == null)
+        {
+            Debug.Log("No Chest Prefab assigned in SpawnChest script.");
+        }
+        else
 
+        {
+            Debug.Log("Chest Prefab assigned in SpawnChest script.");
+        }
     }
 
     // Update is called once per frame

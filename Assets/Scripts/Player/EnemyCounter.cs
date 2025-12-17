@@ -6,6 +6,7 @@ public class EnemyCounter : MonoBehaviour
     public static event Action OnAllEnemiesDefeated;
     private Transform[] enemies;
 
+
     void Start()
     {
         GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
