@@ -84,12 +84,12 @@ public class PlayerHealth : MonoBehaviour
     {
         isKnocked = true;
 
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         rb.AddForce(direction * knockbackForce, ForceMode.Impulse);
 
         yield return new WaitForSeconds(knockbackDuration);
 
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         isKnocked = false;
     }
 
