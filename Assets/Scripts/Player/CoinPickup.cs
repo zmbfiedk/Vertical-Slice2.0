@@ -17,12 +17,17 @@ public class CoinPickup : MonoBehaviour
 
         transform.DOMoveY(startPos.y + jumpHeight, jumpDuration)
                  .SetEase(Ease.OutBack);
+        transform.DOMoveY(startPos.y, jumpDuration)
+                 .SetEase(Ease.InBack)
+                 .SetDelay(jumpDuration);
 
         transform.DORotate(
             new Vector3(0f, 0f, flipAmount),
             jumpDuration,
             RotateMode.FastBeyond360
         );
+
+        Debug.Log("Coin Pickup Animation Started");
     }
 
     void Update()
@@ -39,6 +44,7 @@ public class CoinPickup : MonoBehaviour
 
             // Destroy the coin object
             Destroy(gameObject);
+            Debug.Log("Coin Picked Up");
         }
     }
 }
