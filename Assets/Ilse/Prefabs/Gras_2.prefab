@@ -137,8 +137,11 @@ GameObject:
   - component: {fileID: 7989765651325791992}
   - component: {fileID: 1154296682021568215}
   - component: {fileID: 1551485778960880574}
+<<<<<<< Updated upstream
   - component: {fileID: 4004228226836235380}
   - component: {fileID: 702645981289507432}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Gras2licht
   m_TagString: Untagged
@@ -182,8 +185,11 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+<<<<<<< Updated upstream
   m_ForceMeshLod: -1
   m_MeshLodSelectionBias: 0
+=======
+>>>>>>> Stashed changes
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -205,7 +211,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+<<<<<<< Updated upstream
   m_GlobalIlluminationMeshLod: 0
+=======
+>>>>>>> Stashed changes
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
@@ -268,6 +277,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+<<<<<<< Updated upstream
 --- !u!65 &4004228226836235380
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -301,6 +311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466f19514ff69ed43b022f3c2dbb51c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimatieOnPlayerInteract
+=======
+>>>>>>> Stashed changes
 --- !u!1 &2192123650934091511
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,8 +488,11 @@ GameObject:
   - component: {fileID: 6348747139820401593}
   - component: {fileID: 7591566374215998950}
   - component: {fileID: 4420188121490496965}
+<<<<<<< Updated upstream
   - component: {fileID: 8568544697666904775}
   - component: {fileID: 584539407780034170}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Gras2
   m_TagString: Untagged
@@ -521,8 +536,11 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+<<<<<<< Updated upstream
   m_ForceMeshLod: -1
   m_MeshLodSelectionBias: 0
+=======
+>>>>>>> Stashed changes
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -544,7 +562,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+<<<<<<< Updated upstream
   m_GlobalIlluminationMeshLod: 0
+=======
+>>>>>>> Stashed changes
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -607,6 +628,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+<<<<<<< Updated upstream
 --- !u!114 &8568544697666904775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,6 +662,8 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4812868, y: 1.508668, z: 0.64}
   m_Center: {x: -0.3456434, y: -0.0007762909, z: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &6427823184840018547
 GameObject:
   m_ObjectHideFlags: 0
