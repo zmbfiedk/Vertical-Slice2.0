@@ -1,8 +1,19 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Animation.meta
 guid: c0fab6c8aa182134eb05ce2aa6e3345d
+=======
+guid: 97467feaed0a7be4b8856a635a37167d
+>>>>>>> dev
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< HEAD
+========
+guid: c78c32b68d3b2d3459f7835ba42b1b0b
+>>>>>>>> dev:Assets/Animations.meta
+=======
+>>>>>>> dev
