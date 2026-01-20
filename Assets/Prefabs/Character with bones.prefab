@@ -308,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: ca02f783cb4035149a6bfb73d92e05b5, type: 3}
       propertyPath: m_Name
-      value: Cultofthelamb_Idle1
+      value: Character with bones
       objectReference: {fileID: 0}
     - target: {fileID: -7962462074896585755, guid: ca02f783cb4035149a6bfb73d92e05b5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -446,10 +446,10 @@ Animator:
   m_GameObject: {fileID: 6085814598942280842}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 47c3f2a854d1aac45811cde72316d09e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6942e611178a85a45ab54fc81c2b2154, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0

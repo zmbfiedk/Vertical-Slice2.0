@@ -3,63 +3,61 @@ using UnityEngine;
 
 public class Dodge : MonoBehaviour
 {
-    [Header("Dodge Settings")]
     [SerializeField] private float dodgeDistance = 5f;
     [SerializeField] private float dodgeDuration = 0.2f;
-    [SerializeField] private float cooldownTime = 1f;
 
+    [SerializeField] private float cooldownTime = 1f;
     private float cooldownTimer = 0f;
-    private bool isDodging = false;
 
     private Collider col;
-    private Basemovement move;
-    private Animator anim;
+    private bool isDodging = false;
 
     void Start()
     {
         col = GetComponent<Collider>();
-        move = GetComponent<Basemovement>();
-        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
-        if (cooldownTimer > 0)
+        if (cooldownTimer > 0f)
             cooldownTimer -= Time.deltaTime;
 
-        bool isMoving = move.currentState != Basemovement.MoveState.Idle;
-
-        if (Input.GetKeyDown(KeyCode.Space) && isMoving && !isDodging && cooldownTimer <= 0)
+        if (Input.GetKeyDown(KeyCode.Space) && !isDodging && cooldownTimer <= 0f)
         {
-            StartCoroutine(DodgeRoutine());
+            OnDodge();
         }
+    }
+
+    void OnDodge()
+    {
+        cooldownTimer = cooldownTime;
+
+        StartCoroutine(DodgeRoutine());
     }
 
     private IEnumerator DodgeRoutine()
     {
         isDodging = true;
-        cooldownTimer = cooldownTime;
+
         col.enabled = false;
 
-        Vector3 dir = move.GetDirectionVector(true);
+        Vector3 dodgeDir = transform.forward;
         Vector3 startPos = transform.position;
-        Vector3 endPos = startPos + dir * dodgeDistance;
+        Vector3 endPos = startPos + dodgeDir * dodgeDistance;
 
-        // ANIM CORRESPONDS TO DIRECTION
-        if (dir.x > 0) anim.Play("Dash_Forward");
-        else if (dir.x < 0) anim.Play("Dash_Behind");
-        else anim.Play("Dash_sideways");
+        float elapsed = 0f;
 
-        float t = 0f;
-        while (t < dodgeDuration)
+        while (elapsed < dodgeDuration)
         {
-            transform.position = Vector3.Lerp(startPos, endPos, t / dodgeDuration);
-            t += Time.deltaTime;
+            transform.position = Vector3.Lerp(startPos, endPos, elapsed / dodgeDuration);
+            elapsed += Time.deltaTime;
             yield return null;
         }
 
         transform.position = endPos;
+
         col.enabled = true;
+
         isDodging = false;
     }
 }
