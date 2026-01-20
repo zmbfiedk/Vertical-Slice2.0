@@ -14,7 +14,7 @@ public class PropCircleFilter : MonoBehaviour
 
         foreach (Collider prop in foundProps)
         {
-            Renderer r = prop.GetComponent<Renderer>();
+            SpriteRenderer r = prop.GetComponent<SpriteRenderer>();
             if (r != null) r.enabled = false; // hides while inside circle
         }
     }
@@ -26,7 +26,7 @@ public class PropCircleFilter : MonoBehaviour
 
         foreach (Collider prop in all)
         {
-            Renderer r = prop.GetComponent<Renderer>();
+            SpriteRenderer r = prop.GetComponent<SpriteRenderer>();
             if (r != null && Vector3.Distance(transform.position, prop.transform.position) > hideRadius)
                 r.enabled = true;
         }
