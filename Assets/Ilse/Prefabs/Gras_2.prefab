@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 7989765651325791992}
   - component: {fileID: 1154296682021568215}
   - component: {fileID: 1551485778960880574}
+  - component: {fileID: 4004228226836235380}
+  - component: {fileID: 702645981289507432}
   m_Layer: 0
   m_Name: Gras2licht
   m_TagString: Untagged
@@ -180,6 +182,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -201,6 +205,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
@@ -263,6 +268,39 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &4004228226836235380
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537003328971883551}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.3301811, y: 1.8813612, z: 0.64}
+  m_Center: {x: -0.30990982, y: 0.0043205023, z: 0}
+--- !u!114 &702645981289507432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537003328971883551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466f19514ff69ed43b022f3c2dbb51c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimatieOnPlayerInteract
 --- !u!1 &2192123650934091511
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +476,8 @@ GameObject:
   - component: {fileID: 6348747139820401593}
   - component: {fileID: 7591566374215998950}
   - component: {fileID: 4420188121490496965}
+  - component: {fileID: 8568544697666904775}
+  - component: {fileID: 584539407780034170}
   m_Layer: 0
   m_Name: Gras2
   m_TagString: Untagged
@@ -481,6 +521,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -502,6 +544,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -564,6 +607,39 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8568544697666904775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5751320328807984340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466f19514ff69ed43b022f3c2dbb51c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimatieOnPlayerInteract
+--- !u!65 &584539407780034170
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5751320328807984340}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4812868, y: 1.508668, z: 0.64}
+  m_Center: {x: -0.3456434, y: -0.0007762909, z: 0}
 --- !u!1 &6427823184840018547
 GameObject:
   m_ObjectHideFlags: 0

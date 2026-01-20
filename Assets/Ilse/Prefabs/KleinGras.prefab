@@ -107,6 +107,8 @@ GameObject:
   - component: {fileID: 2493870308743484636}
   - component: {fileID: 7910206466934567067}
   - component: {fileID: 7201765787165756677}
+  - component: {fileID: 4722359651938736934}
+  - component: {fileID: 1643066630011455707}
   m_Layer: 0
   m_Name: KleinGras1
   m_TagString: Untagged
@@ -123,7 +125,7 @@ Transform:
   m_GameObject: {fileID: 5260058675436857301}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.22086763, y: -0.11352813, z: -0.08219699}
+  m_LocalPosition: {x: 0.84, y: 0.14, z: 1.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -150,6 +152,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -171,6 +175,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -228,6 +233,39 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4722359651938736934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260058675436857301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466f19514ff69ed43b022f3c2dbb51c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimatieOnPlayerInteract
+--- !u!65 &1643066630011455707
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260058675436857301}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.92305017, y: 0.7739401, z: 0.73}
+  m_Center: {x: 0.0034750104, y: 0.00031003356, z: 0}
 --- !u!1 &6951720003824615521
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +278,8 @@ GameObject:
   - component: {fileID: 4625685259004071635}
   - component: {fileID: 4217781607292658433}
   - component: {fileID: 2866367689103041607}
+  - component: {fileID: 47306845404037451}
+  - component: {fileID: 4553973918948513611}
   m_Layer: 0
   m_Name: Kleingras1Licht
   m_TagString: Untagged
@@ -283,6 +323,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -304,6 +346,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -361,6 +404,39 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &47306845404037451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951720003824615521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466f19514ff69ed43b022f3c2dbb51c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimatieOnPlayerInteract
+--- !u!65 &4553973918948513611
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951720003824615521}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9230503, y: 0.77394015, z: 0.73}
+  m_Center: {x: -0.01274699, y: -0.0029342473, z: 0}
 --- !u!1 &8294367047468482866
 GameObject:
   m_ObjectHideFlags: 0
