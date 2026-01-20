@@ -35,8 +35,12 @@ AnimatorState:
   m_Name: KleinGrasLightIdle
   m_Speed: 1
   m_CycleOffset: 0
+<<<<<<< Updated upstream
   m_Transitions:
   - {fileID: -1670615391701287421}
+=======
+  m_Transitions: []
+>>>>>>> Stashed changes
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -52,6 +56,7 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+<<<<<<< Updated upstream
 --- !u!1101 &-1670615391701287421
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -77,6 +82,8 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+=======
+>>>>>>> Stashed changes
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -85,6 +92,7 @@ AnimatorController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Kleingras1Licht
   serializedVersion: 5
+<<<<<<< Updated upstream
   m_AnimatorParameters:
   - m_Name: PlayerInteract
     m_Type: 9
@@ -92,6 +100,9 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+=======
+  m_AnimatorParameters: []
+>>>>>>> Stashed changes
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -115,8 +126,12 @@ AnimatorState:
   m_Name: KleinGrasLightJiggle
   m_Speed: 1
   m_CycleOffset: 0
+<<<<<<< Updated upstream
   m_Transitions:
   - {fileID: 6733339483729533321}
+=======
+  m_Transitions: []
+>>>>>>> Stashed changes
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -132,6 +147,7 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+<<<<<<< Updated upstream
 --- !u!1101 &6733339483729533321
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -154,3 +170,5 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+=======
+>>>>>>> Stashed changes

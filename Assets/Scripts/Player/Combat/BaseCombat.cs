@@ -14,21 +14,19 @@ public class BaseCombat : MonoBehaviour
     [SerializeField] private float attackRange = 1f;
 
     [Header("Attack Movement")]
-    [SerializeField] private float forwardPush = 0.5f;
-    [SerializeField] private float pushSpeed = 10f;
+    [SerializeField] private float forwardPush = 0.5f;   // how far player moves during attack
+    [SerializeField] private float pushSpeed = 10f;       // how fast he moves that 0.5f
 
     [Header("Read Only")]
     [SerializeField] private bool isAttacking = false;
     [SerializeField] private float comboResetTimer = 0f;
 
     private int attackIndex = 0;
-    private Basemovement move;
-    private Animator anim;
+    private Basemovement move; 
 
     void Start()
     {
         move = GetComponent<Basemovement>();
-        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -49,9 +47,8 @@ public class BaseCombat : MonoBehaviour
     private IEnumerator Attack1()
     {
         isAttacking = true;
-        move.canMove = false;
+        move.canMove = false;  // 
 
-        anim.Play("Attack_1");
         DoHit();
         yield return new WaitForSeconds(delayBetweenAttacks);
 
@@ -66,6 +63,7 @@ public class BaseCombat : MonoBehaviour
                 StartCoroutine(Attack2());
                 yield break;
             }
+
             yield return null;
         }
 
@@ -74,8 +72,8 @@ public class BaseCombat : MonoBehaviour
 
     private IEnumerator Attack2()
     {
-        anim.Play("Attack_2");
         DoHit();
+
         yield return new WaitForSeconds(delayBetweenAttacks);
 
         float timer = delayBetweenAttacks;
@@ -89,6 +87,7 @@ public class BaseCombat : MonoBehaviour
                 StartCoroutine(Attack3());
                 yield break;
             }
+
             yield return null;
         }
 
@@ -97,51 +96,51 @@ public class BaseCombat : MonoBehaviour
 
     private IEnumerator Attack3()
     {
-        anim.Play("Attack_3");
         DoHit();
-        yield return new WaitForSeconds(delayBetweenAttacks);
 
+        yield return new WaitForSeconds(delayBetweenAttacks);
         comboResetTimer = comboCooldown;
+
         EndCombo();
     }
 
     private void EndCombo()
     {
         isAttacking = false;
-        move.canMove = true;
+        move.canMove = true;   //  Unlock movement again
         attackIndex = 0;
     }
 
     private void DoHit()
     {
         SpawnHurtbox();
-        StartCoroutine(PushForward());
+        StartCoroutine(PushForward());   //  Add attack movement
         OnHit?.Invoke();
     }
 
     private IEnumerator PushForward()
     {
-        Vector3 dir = move.GetDirectionVector();
         float moved = 0f;
 
+        // Move the player forward smoothly until it reaches forwardPush distance
         while (moved < forwardPush)
         {
             float step = pushSpeed * Time.deltaTime;
-            transform.Translate(dir * step, Space.World);
-            moved += step;
+            transform.Translate(Vector3.forward * step);
 
+            moved += step;
             yield return null;
         }
     }
 
     private void SpawnHurtbox()
     {
-        if (hurtboxPrefab == null) return;
+        if (hurtboxPrefab == null)
+            return;
 
-        Vector3 dir = move.GetDirectionVector();
-        Vector3 spawnPos = transform.position + dir * attackRange;
+        Vector3 spawnPos = transform.position + transform.forward * attackRange;
 
-        GameObject hb = Instantiate(hurtboxPrefab, spawnPos, Quaternion.identity);
+        GameObject hb = Instantiate(hurtboxPrefab, spawnPos, transform.rotation, transform);
         Destroy(hb, 0.2f);
     }
 }

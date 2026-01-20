@@ -4,18 +4,13 @@ using UnityEngine;
 public class OnHitGlow : MonoBehaviour
 {
     private Material mat;
-
-    [Header("Glow Settings")]
     [SerializeField] private Color glowColor = Color.white;
     [SerializeField] private float glowIntensity = 2f;
     [SerializeField] private float glowDuration = 0.2f;
 
-    [Header("Alpha Clip Settings")]
-    [SerializeField] private float normalClip = 0.5f; // default value
-    [SerializeField] private float attackClip = 0f;   // fully disable clipping
-
     private void Awake()
     {
+        // Get the renderer's material (creates its own instance)
         mat = GetComponent<Renderer>().material;
     }
 
@@ -36,17 +31,13 @@ public class OnHitGlow : MonoBehaviour
 
     private IEnumerator GlowRoutine()
     {
+        // Enable emission on the material
         mat.EnableKeyword("_EMISSION");
         mat.SetColor("_EmissionColor", glowColor * glowIntensity);
 
-        if (mat.HasProperty("_Cutoff"))
-            mat.SetFloat("_Cutoff", attackClip);
-
         yield return new WaitForSeconds(glowDuration);
 
+        // Turn emission off after the flash
         mat.SetColor("_EmissionColor", Color.black);
-
-        if (mat.HasProperty("_Cutoff"))
-            mat.SetFloat("_Cutoff", normalClip);
     }
 }
