@@ -5,7 +5,7 @@ public class Basemovement : MonoBehaviour
     [SerializeField] private float speed = 5f;
 
     [HideInInspector] public bool canMove = true;
-    // Combat script toggles this
+
 
     void Update()
     {
