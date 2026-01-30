@@ -3,20 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Enemy
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Shadow Casting
+  - 
   - Water
   - UI
-  - Post processing
-  - Player
-  - Ignore Post processing
-  - Treelayer
-  - Bones
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -39,30 +38,8 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Arena
-    uniqueID: 1579992775
-    locked: 0
-  - name: Gras
-    uniqueID: 1929284111
-    locked: 0
-  - name: Trees_BehindBones
-    uniqueID: 3334708281
-    locked: 0
-  - name: Bones
-    uniqueID: 3144634025
-    locked: 0
-  - name: Treelayer
-    uniqueID: 1440407037
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   m_RenderingLayers:
   - Default
-  - Light Layer 1
-  - Light Layer 2
-  - Light Layer 3
-  - Light Layer 4
-  - Light Layer 5
-  - Light Layer 6
-  - Light Layer 7

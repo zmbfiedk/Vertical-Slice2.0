@@ -1,55 +1,60 @@
 using UnityEngine;
-using System;   
-using UnityEngine.Rendering;
+using System;
 
+[DisallowMultipleComponent]
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField]private int _health = 100;
-    [SerializeField]private GameObject _deadEnemy;
-    [SerializeField] EnemyDetection _enemyDetection;
-    private GameObject[] enemy;
-    private float _knockBackTime = 0f;
-    enum State
+    [Header("Health")]
+    [SerializeField] private int maxHealth = 3;
+
+    [Header("Hit Settings")]
+    [SerializeField] private float hitInvincibilityTime = 0.15f;
+
+
+    public int CurrentHealth { get; private set; }
+    public bool IsInvincible { get; private set; }
+
+    public event Action<int> OnHealthChanged;
+    public event Action OnDeath;
+
+    private void Awake()
     {
-        Alive,
-        Dead
-    }
-    State state = State.Alive;
-    void Start()
-    {
-        State state = State.Alive;
-        Damage.damageDealt += TakeDamage;
+        CurrentHealth = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int amount)
     {
-        TakeDamage(0);
-        if (state == State.Dead)
+        if (IsInvincible) return;
+
+        CurrentHealth -= amount;
+        CurrentHealth = Mathf.Max(CurrentHealth, 0);
+
+        OnHealthChanged?.Invoke(CurrentHealth);
+
+        if (CurrentHealth <= 0)
         {
-            
+            Die();
+        }
+        else
+        {
+            StartCoroutine(InvincibilityCoroutine());
         }
     }
 
-    void TakeDamage(int damage)
+    private void Die()
     {
-        _health -= damage;
-        if (_health <= 0)
-        {
-            _deadEnemy.transform.position = transform.position;
-            Vector3 direction = _enemyDetection._player.transform.position - transform.position;
-            enemy = GameObject.FindGameObjectsWithTag("Enemy");
-            State state = State.Dead;
-            foreach (var i in enemy)
-            {
-                Destroy(i);
-            }
-            if (_knockBackTime <= 0.2)
-            {
-                _deadEnemy.transform.position += -direction.normalized * 10f;
-                _knockBackTime += Time.deltaTime;
-            }
-            Instantiate(_deadEnemy);
-        }
+        Debug.Log($"{name} died");
+
+        OnDeath?.Invoke();
+
+        // Optional cleanup
+        Destroy(gameObject);
+    }
+
+    private System.Collections.IEnumerator InvincibilityCoroutine()
+    {
+        IsInvincible = true;
+        yield return new WaitForSeconds(hitInvincibilityTime);
+        IsInvincible = false;
     }
 }
